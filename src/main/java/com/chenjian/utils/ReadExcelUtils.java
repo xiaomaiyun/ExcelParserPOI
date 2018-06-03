@@ -113,7 +113,7 @@ public class ReadExcelUtils {
         //保存文件路径
         contentModle.setFilePath(filePath);
 
-        System.out.println("Sheet的数量：" + workbook.getNumberOfSheets());
+        System.out.println("Sheet总数量：" + workbook.getNumberOfSheets());
         //遍历每个sheet
         for (int numSheets = 0; numSheets < workbook.getNumberOfSheets(); numSheets++) {
             //保存Sheet的名字
@@ -123,7 +123,7 @@ public class ReadExcelUtils {
                 // 获得一个sheet
                 XSSFSheet aSheet = workbook.getSheetAt(numSheets);
                 //行的数量必须包含等于，否则最后一行没有读取，因为getLastRowNum()方法表示获取表单中最后一行的索引（而不是总行数）
-                System.out.println("LastRowNum的值：" + aSheet.getLastRowNum());
+                System.out.println("总行数：" + aSheet.getLastRowNum());
                 for (int rowNumOfSheet = 0; rowNumOfSheet <= aSheet.getLastRowNum(); rowNumOfSheet++) {
                     // 遍历每一行
                     if (null != aSheet.getRow(rowNumOfSheet)) {
@@ -131,7 +131,7 @@ public class ReadExcelUtils {
                         XSSFRow aRow = aSheet.getRow(rowNumOfSheet);
 
                         //getLastCellNum()获取此行中包含的最后一个单元格的总列数(而不是索引)
-                        System.out.println("LastCellNum的值：" + aRow.getLastCellNum());
+                        System.out.println("总列数：" + aRow.getLastCellNum());
                         for (int cellNumOfRow = 0; cellNumOfRow < aRow.getLastCellNum(); cellNumOfRow++) {
                             //遍历每个单元格
                             if (null != aRow.getCell(cellNumOfRow)) {
