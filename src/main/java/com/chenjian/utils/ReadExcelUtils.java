@@ -192,7 +192,9 @@ public class ReadExcelUtils {
                     cellValue = format.format(cell.getDateCellValue());
                 } else {
                     //数字类型
-                    cellValue = String.valueOf(cell.getNumericCellValue());
+                    double value=cell.getNumericCellValue();
+                    int intValue=(int)value;
+                    cellValue = value-intValue==0?String.valueOf(intValue):String.valueOf(value);
                 }
                 break;
             //空白
